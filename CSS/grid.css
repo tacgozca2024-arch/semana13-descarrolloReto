@@ -1,0 +1,107 @@
+.bg-image {
+    margin-left: 72px;
+    padding: 75px 20px 20px 20px;
+    column-count: 4;
+    column-gap: 16px;
+}
+
+.pin-card {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pin-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    transition: filter 0.2s;
+}
+
+.pin-card:hover img {
+    filter: brightness(0.85);
+}
+
+.pin-save-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e60023;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.pin-actions {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.pin-action-btn {
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    border-radius: 10px;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    justify-content: center;
+}
+
+.pin-share {
+    flex: 0;
+    padding: 7px 12px;
+}
+
+.pin-card:hover .pin-save-btn,
+.pin-card:hover .pin-actions {
+    opacity: 1;
+}
+
+.skeleton-card {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e0e0e0;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-card:nth-child(odd)  { height: 250px; }
+.skeleton-card:nth-child(even) { height: 320px; }
+.skeleton-card:nth-child(3n)   { height: 200px; }
+
+@keyframes shimmer {
+    0%   { background-color: #e0e0e0; }
+    50%  { background-color: #f0f0f0; }
+    100% { background-color: #e0e0e0; }
+}
+
+@media (max-width: 1024px) {
+    .bg-image { column-count: 3; }
+}
+
+@media (max-width: 768px) {
+    .bg-image { column-count: 2; }
+}
